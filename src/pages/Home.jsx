@@ -91,7 +91,7 @@ export default function Home() {
             transition={{ delay: 0.2 }}
             className="text-gray-600 text-lg leading-relaxed"
           >
-            From thrilling water sports to peaceful homestays, Tarkarli offers a
+            From thrilling Water Sports to peaceful homestays, Tarkarli offers a
             perfect blend of adventure and relaxation.
           </motion.p>
         </div>
