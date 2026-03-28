@@ -41,7 +41,7 @@ export default function Contact() {
 
               <div className="flex items-center gap-4 text-gray-700">
                 <Phone size={22} className="text-blue-600" />
-                <span>+91 98765 43210</span>
+                <span>+91 87670 32976</span>
               </div>
 
               <div className="flex items-center gap-4 text-gray-700">
