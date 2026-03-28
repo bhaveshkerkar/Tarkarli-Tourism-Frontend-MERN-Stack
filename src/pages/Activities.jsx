@@ -119,7 +119,7 @@ function Activities() {
               }}
               className="bg-white text-blue-600 px-8 py-4 rounded-lg text-lg hover:bg-blue-50 transition-colors duration-300"
             >
-              Contact Us on WhatsApp
+              Contact Us On WhatsApp
             </button>
           </motion.div>
         </div>
