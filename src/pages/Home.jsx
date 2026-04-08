@@ -3,14 +3,15 @@ import { ChevronDown } from "lucide-react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import heroVideo from "../assets/videos/HerohomeVideo.mp4";
+import SideNav from "../components/SideNav";
 
 export default function Home() {
   return (
     <>
       <Navbar />
-
+      <SideNav />
       {/* HERO SECTION */}
-      <section className="relative h-screen w-full overflow-hidden">
+      <section id="hero" className="relative h-screen w-full overflow-hidden">
         {/* Background video */}
         <video
           className="absolute inset-0 h-full w-full object-cover"
@@ -61,7 +62,7 @@ export default function Home() {
       </section>
 
       {/* ABOUT SECTION */}
-      <section className="py-24 px-6 bg-white">
+      <section id="about" className="py-24 px-6 bg-white">
         <div className="max-w-4xl mx-auto text-center">
           <motion.h2
             initial={{ opacity: 0, y: 30 }}
@@ -98,7 +99,10 @@ export default function Home() {
       </section>
 
       {/* HIGHLIGHTS */}
-      <section className="py-24 px-6 bg-gradient-to-b from-blue-50 to-white">
+      <section
+        id="features"
+        className="py-24 px-6 bg-gradient-to-b from-blue-50 to-white"
+      >
         <div className="max-w-7xl mx-auto">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
