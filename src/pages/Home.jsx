@@ -81,7 +81,7 @@ export default function Home() {
             className="text-gray-600 text-lg leading-relaxed mb-6"
           >
             Tarkarli is a pristine beach destination in the Sindhudurg district
-            of Maharashtra, known for its crystal-clear waters, white sand
+            of Maharashtra, known for it's crystal-clear waters, white sand
             beaches, and vibrant marine life.
           </motion.p>
 
