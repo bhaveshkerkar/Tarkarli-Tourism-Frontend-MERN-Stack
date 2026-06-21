@@ -1,14 +1,12 @@
 import { motion } from "framer-motion";
-import { MapPin, DollarSign } from "lucide-react";
+import { MapPin } from "lucide-react";
+import { getWhatsAppLink } from "../config/site";
 
 function StayCard({ image, name, location, price, type, index = 0 }) {
-  const whatsappNumber = "919876543210";
-  const whatsappMessage = `Hi, I'm interested in booking ${name} in Tarkarli`;
-
   const handleWhatsAppClick = () => {
-    const url = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
-      whatsappMessage,
-    )}`;
+    const url = getWhatsAppLink(
+      `Hi, I'm interested in booking ${name} in Tarkarli`,
+    );
     window.open(url, "_blank");
   };
 

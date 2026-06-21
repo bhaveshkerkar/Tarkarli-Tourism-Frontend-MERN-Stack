@@ -1,5 +1,3 @@
-import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
 import StayCard from "../components/StayCard";
 
 export default function Stay() {
@@ -40,8 +38,6 @@ export default function Stay() {
 
   return (
     <>
-      <Navbar />
-
       <section className="pt-28 pb-20 px-6 bg-gradient-to-b from-blue-50 to-white">
         <div className="max-w-7xl mx-auto">
           {/* Header */}
@@ -63,8 +59,6 @@ export default function Stay() {
           </div>
         </div>
       </section>
-
-      <Footer />
     </>
   );
 }

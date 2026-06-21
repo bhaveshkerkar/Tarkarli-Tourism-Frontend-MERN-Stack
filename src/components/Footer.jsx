@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import {
   Facebook,
   Instagram,
@@ -7,6 +8,13 @@ import {
   Phone,
   MapPin,
 } from "lucide-react";
+import { CONTACT, SOCIAL_LINKS, NAV_LINKS } from "../config/site";
+
+const socialIcons = [
+  { key: "facebook", Icon: Facebook, label: "Facebook" },
+  { key: "instagram", Icon: Instagram, label: "Instagram" },
+  { key: "twitter", Icon: Twitter, label: "Twitter" },
+];
 
 export default function Footer() {
   return (
@@ -36,26 +44,13 @@ export default function Footer() {
           >
             <h4 className="text-lg mb-4">Quick Links</h4>
             <ul className="space-y-2 text-blue-200">
-              <li>
-                <a href="/" className="hover:text-white">
-                  Home
-                </a>
-              </li>
-              <li>
-                <a href="/stay" className="hover:text-white">
-                  Stay
-                </a>
-              </li>
-              <li>
-                <a href="/activities" className="hover:text-white">
-                  Activities
-                </a>
-              </li>
-              <li>
-                <a href="/contact" className="hover:text-white">
-                  Contact
-                </a>
-              </li>
+              {NAV_LINKS.map((link) => (
+                <li key={link.to}>
+                  <Link to={link.to} className="hover:text-white">
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </motion.div>
 
@@ -69,26 +64,33 @@ export default function Footer() {
             <h4 className="text-lg mb-4">Get in Touch</h4>
             <div className="space-y-3 text-blue-200">
               <p className="flex items-center gap-3">
-                <MapPin size={18} /> Tarkarli, Sindhudurg, Maharashtra
+                <MapPin size={18} /> {CONTACT.address}
               </p>
               <p className="flex items-center gap-3">
-                <Phone size={18} /> +91 87670 32976
+                <Phone size={18} /> {CONTACT.phoneDisplay}
               </p>
               <p className="flex items-center gap-3">
-                <Mail size={18} /> info@exploretarkarli.com
+                <Mail size={18} /> {CONTACT.email}
               </p>
             </div>
 
             <div className="flex gap-4 mt-6">
-              <a className="p-2 bg-blue-800 rounded-full hover:bg-blue-700">
-                <Facebook size={18} />
-              </a>
-              <a className="p-2 bg-blue-800 rounded-full hover:bg-blue-700">
-                <Instagram size={18} />
-              </a>
-              <a className="p-2 bg-blue-800 rounded-full hover:bg-blue-700">
-                <Twitter size={18} />
-              </a>
+              {socialIcons.map(({ key, Icon, label }) => {
+                const url = SOCIAL_LINKS[key];
+                if (!url) return null;
+                return (
+                  <a
+                    key={key}
+                    href={url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={label}
+                    className="p-2 bg-blue-800 rounded-full hover:bg-blue-700"
+                  >
+                    <Icon size={18} />
+                  </a>
+                );
+              })}
             </div>
           </motion.div>
         </div>

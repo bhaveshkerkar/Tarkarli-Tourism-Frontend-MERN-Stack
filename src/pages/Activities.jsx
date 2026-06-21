@@ -1,9 +1,7 @@
 import { motion } from "framer-motion";
 import { Waves, Ship, Anchor, Fish } from "lucide-react";
-
-import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
 import ActivityCard from "../components/ActivityCard";
+import { getWhatsAppLink } from "../config/site";
 
 function Activities() {
   const activities = [
@@ -59,8 +57,6 @@ function Activities() {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-blue-50 to-white">
-      <Navbar variant="simple" />
-
       {/* Header */}
       <div className="pt-24 pb-12 px-6">
         <div className="max-w-7xl mx-auto">
@@ -109,13 +105,12 @@ function Activities() {
 
             <button
               onClick={() => {
-                const whatsappNumber = "919876543210";
-                const message =
-                  "Hi, I would like to book activities in Tarkarli";
-                const url = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
-                  message,
-                )}`;
-                window.open(url, "_blank");
+                window.open(
+                  getWhatsAppLink(
+                    "Hi, I would like to book activities in Tarkarli",
+                  ),
+                  "_blank",
+                );
               }}
               className="bg-white text-blue-600 px-8 py-4 rounded-lg text-lg hover:bg-blue-50 transition-colors duration-300"
             >
@@ -124,8 +119,6 @@ function Activities() {
           </motion.div>
         </div>
       </section>
-
-      <Footer />
     </div>
   );
 }

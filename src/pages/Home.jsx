@@ -1,14 +1,11 @@
 import { motion } from "framer-motion";
 import { ChevronDown } from "lucide-react";
-import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
 import heroVideo from "../assets/videos/HerohomeVideo.mp4";
 import SideNav from "../components/SideNav";
 
 export default function Home() {
   return (
     <>
-      <Navbar />
       <SideNav />
       {/* HERO SECTION */}
       <section id="hero" className="relative h-screen w-full overflow-hidden">
@@ -155,8 +152,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-      <Footer />
     </>
   );
 }
