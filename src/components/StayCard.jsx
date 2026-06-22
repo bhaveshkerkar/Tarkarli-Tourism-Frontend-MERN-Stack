@@ -1,13 +1,14 @@
 import { motion } from "framer-motion";
 import { MapPin } from "lucide-react";
+import { Link } from "react-router-dom";
 import { getWhatsAppLink } from "../config/site";
 
-function StayCard({ image, name, location, price, type, index = 0 }) {
+function StayCard({ id, image, name, location, price, type, index = 0 }) {
   const handleWhatsAppClick = () => {
-    const url = getWhatsAppLink(
-      `Hi, I'm interested in booking ${name} in Tarkarli`,
+    window.open(
+      getWhatsAppLink(`Hi, I'm interested in booking ${name} in Tarkarli`),
+      "_blank",
     );
-    window.open(url, "_blank");
   };
 
   return (
@@ -24,9 +25,9 @@ function StayCard({ image, name, location, price, type, index = 0 }) {
         <img
           src={image}
           alt={name}
+          loading="lazy"
           className="w-full h-full object-cover hover:scale-110 transition-transform duration-500"
         />
-
         {type && (
           <div className="absolute top-4 right-4">
             <span className="bg-blue-600 text-white px-4 py-1.5 rounded-full text-sm capitalize">
@@ -45,7 +46,6 @@ function StayCard({ image, name, location, price, type, index = 0 }) {
           <span>{location}</span>
         </div>
 
-        {/* ✅ PRICE FIXED */}
         <div className="flex items-center gap-2 text-gray-700 mb-6">
           <span className="text-lg font-semibold">{price}</span>
         </div>
@@ -53,14 +53,16 @@ function StayCard({ image, name, location, price, type, index = 0 }) {
         <div className="flex gap-3">
           <button
             onClick={handleWhatsAppClick}
-            className="flex-1 bg-green-600 hover:bg-green-700 text-white py-3 rounded-lg"
+            className="flex-1 bg-green-600 hover:bg-green-700 text-white py-3 rounded-lg transition"
           >
             Book via WhatsApp
           </button>
-
-          <button className="flex-1 bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-lg">
+          <Link
+            to={`/stay/${id}`}
+            className="flex-1 bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-lg transition text-center"
+          >
             View Details
-          </button>
+          </Link>
         </div>
       </div>
     </motion.div>
