@@ -45,10 +45,8 @@ export default function Contact() {
     setErrors(validationErrors);
     if (Object.keys(validationErrors).length > 0) return;
 
-    // No backend endpoint exists yet — route through WhatsApp for now,
-    // same pattern as the booking buttons elsewhere on the site.
-    // TODO: once POST /api/contact exists, replace this block with a real
-    // fetch() call. The validation above stays exactly as-is.
+    // TODO: replace this block with fetch("POST /api/contact") once backend exists.
+    // Validation above stays exactly as-is.
     const message = `Hi, I'm ${form.name} (${form.email}). ${form.message}`;
     window.open(getWhatsAppLink(message), "_blank");
 
@@ -59,7 +57,6 @@ export default function Contact() {
   return (
     <section className="pt-28 pb-24 px-6 bg-gradient-to-b from-blue-50 to-white">
       <div className="max-w-6xl mx-auto">
-        {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -70,11 +67,10 @@ export default function Contact() {
           </h1>
           <p className="text-gray-600 text-lg">
             Planning a trip to Tarkarli? Have questions about stays or
-            activities? We’d love to hear from you.
+            activities? We'd love to hear from you.
           </p>
         </motion.div>
 
-        {/* Content */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
           {/* Contact Info */}
           <motion.div
@@ -87,24 +83,21 @@ export default function Contact() {
               <MapPin size={22} className="text-blue-600" />
               <span>{CONTACT.address}</span>
             </div>
-
             <div className="flex items-center gap-4 text-gray-700">
               <Phone size={22} className="text-blue-600" />
               <span>{CONTACT.phoneDisplay}</span>
             </div>
-
             <div className="flex items-center gap-4 text-gray-700">
               <Mail size={22} className="text-blue-600" />
               <span>{CONTACT.email}</span>
             </div>
-
             <p className="text-gray-600 mt-6 leading-relaxed">
               Our team is available to help you plan your perfect coastal
               getaway — from accommodation to unforgettable water adventures.
             </p>
           </motion.div>
 
-          {/* Contact Form */}
+          {/* Form */}
           <motion.form
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
