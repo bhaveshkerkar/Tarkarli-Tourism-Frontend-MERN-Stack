@@ -1,45 +1,7 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import StayCard from "../components/StayCard";
-
-const stays = [
-  {
-    id: 1,
-    name: "Blue Water Resort",
-    location: "Tarkarli Beach",
-    price: "₹4,500 / night",
-    type: "Resort",
-    image:
-      "https://images.unsplash.com/photo-1761158501691-c1cd5a31e69f?fm=jpg&q=80&w=1200",
-  },
-  {
-    id: 2,
-    name: "Konkan Homestay",
-    location: "Malvan",
-    price: "₹2,000 / night",
-    type: "Homestay",
-    image:
-      "https://images.unsplash.com/photo-1637770577089-608e37d9502c?fm=jpg&q=80&w=1200",
-  },
-  {
-    id: 3,
-    name: "Sandy Feet Cottage",
-    location: "Devbagh Beach",
-    price: "₹1,500 / night",
-    type: "Cottage",
-    image:
-      "https://images.unsplash.com/photo-1682957205580-4a71606d284c?fm=jpg&q=80&w=1200",
-  },
-  {
-    id: 4,
-    name: "Seashell Villa",
-    location: "Tarkarli Coast",
-    price: "₹6,000 / night",
-    type: "Villa",
-    image:
-      "https://images.unsplash.com/photo-1761158501691-c1cd5a31e69f?fm=jpg&q=80&w=1200",
-  },
-];
+import { stays } from "../data/stays";
 
 export default function Stay() {
   return (

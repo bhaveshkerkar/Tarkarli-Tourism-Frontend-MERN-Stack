@@ -1,64 +1,7 @@
 import { motion } from "framer-motion";
-import { Waves, Ship, Anchor, Fish } from "lucide-react";
 import ActivityCard from "../components/ActivityCard";
 import { getWhatsAppLink } from "../config/site";
-
-const activities = [
-  {
-    id: 1,
-    title: "Scuba Diving",
-    description:
-      "Dive into crystal-clear waters and explore vibrant coral reefs, colorful marine life, and underwater wonders. Perfect for beginners and experienced divers.",
-    image:
-      "https://images.unsplash.com/photo-1682957205580-4a71606d284c?fm=jpg&q=80&w=1080",
-    icon: Fish,
-  },
-  {
-    id: 2,
-    title: "Water Sports",
-    description:
-      "Experience thrilling water sports including parasailing, jet skiing, banana boat rides, and kayaking. Feel the adrenaline rush on pristine waters.",
-    image:
-      "https://images.unsplash.com/photo-1617945174127-e47d409e47c1?fm=jpg&q=80&w=1080",
-    icon: Waves,
-  },
-  {
-    id: 3,
-    title: "Boat Rides",
-    description:
-      "Enjoy serene boat rides to nearby islands, sunset cruises, and dolphin watching tours. Relax and soak in breathtaking coastal beauty.",
-    image:
-      "https://images.unsplash.com/photo-1556646371-4b19bbefd7af?fm=jpg&q=80&w=1080",
-    icon: Ship,
-  },
-  {
-    id: 4,
-    title: "Snorkeling",
-    description:
-      "Discover the underwater world with snorkeling adventures. Witness exotic fish, coral formations, and marine biodiversity in shallow waters.",
-    image:
-      "https://images.unsplash.com/photo-1682957205580-4a71606d284c?fm=jpg&q=80&w=1080",
-    icon: Anchor,
-  },
-  {
-    id: 5,
-    title: "Beach Activities",
-    description:
-      "Relax on pristine beaches, enjoy volleyball, build sandcastles, or simply unwind while listening to the waves.",
-    image:
-      "https://images.unsplash.com/photo-1637770577089-608e37d9502c?fm=jpg&q=80&w=1080",
-    icon: Waves,
-  },
-  {
-    id: 6,
-    title: "Island Hopping",
-    description:
-      "Explore nearby islands like Devbagh and experience secluded beaches, local culture, and untouched natural beauty.",
-    image:
-      "https://images.unsplash.com/photo-1556646371-4b19bbefd7af?fm=jpg&q=80&w=1080",
-    icon: Ship,
-  },
-];
+import { activities } from "../data/activities";
 
 export default function Activities() {
   return (
