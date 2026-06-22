@@ -3,62 +3,68 @@ import { Waves, Ship, Anchor, Fish } from "lucide-react";
 import ActivityCard from "../components/ActivityCard";
 import { getWhatsAppLink } from "../config/site";
 
-function Activities() {
-  const activities = [
-    {
-      title: "Scuba Diving",
-      description:
-        "Dive into crystal-clear waters and explore vibrant coral reefs, colorful marine life, and underwater wonders. Perfect for beginners and experienced divers.",
-      image:
-        "https://images.unsplash.com/photo-1682957205580-4a71606d284c?fm=jpg&q=80&w=1080",
-      icon: Fish,
-    },
-    {
-      title: "Water Sports",
-      description:
-        "Experience thrilling water sports including parasailing, jet skiing, banana boat rides, and kayaking. Feel the adrenaline rush on pristine waters.",
-      image:
-        "https://images.unsplash.com/photo-1617945174127-e47d409e47c1?fm=jpg&q=80&w=1080",
-      icon: Waves,
-    },
-    {
-      title: "Boat Rides",
-      description:
-        "Enjoy serene boat rides to nearby islands, sunset cruises, and dolphin watching tours. Relax and soak in breathtaking coastal beauty.",
-      image:
-        "https://images.unsplash.com/photo-1556646371-4b19bbefd7af?fm=jpg&q=80&w=1080",
-      icon: Ship,
-    },
-    {
-      title: "Snorkeling",
-      description:
-        "Discover the underwater world with snorkeling adventures. Witness exotic fish, coral formations, and marine biodiversity in shallow waters.",
-      image:
-        "https://images.unsplash.com/photo-1682957205580-4a71606d284c?fm=jpg&q=80&w=1080",
-      icon: Anchor,
-    },
-    {
-      title: "Beach Activities",
-      description:
-        "Relax on pristine beaches, enjoy volleyball, build sandcastles, or simply unwind while listening to the waves.",
-      image:
-        "https://images.unsplash.com/photo-1637770577089-608e37d9502c?fm=jpg&q=80&w=1080",
-      icon: Waves,
-    },
-    {
-      title: "Island Hopping",
-      description:
-        "Explore nearby islands like Devbagh and experience secluded beaches, local culture, and untouched natural beauty.",
-      image:
-        "https://images.unsplash.com/photo-1556646371-4b19bbefd7af?fm=jpg&q=80&w=1080",
-      icon: Ship,
-    },
-  ];
+const activities = [
+  {
+    id: 1,
+    title: "Scuba Diving",
+    description:
+      "Dive into crystal-clear waters and explore vibrant coral reefs, colorful marine life, and underwater wonders. Perfect for beginners and experienced divers.",
+    image:
+      "https://images.unsplash.com/photo-1682957205580-4a71606d284c?fm=jpg&q=80&w=1080",
+    icon: Fish,
+  },
+  {
+    id: 2,
+    title: "Water Sports",
+    description:
+      "Experience thrilling water sports including parasailing, jet skiing, banana boat rides, and kayaking. Feel the adrenaline rush on pristine waters.",
+    image:
+      "https://images.unsplash.com/photo-1617945174127-e47d409e47c1?fm=jpg&q=80&w=1080",
+    icon: Waves,
+  },
+  {
+    id: 3,
+    title: "Boat Rides",
+    description:
+      "Enjoy serene boat rides to nearby islands, sunset cruises, and dolphin watching tours. Relax and soak in breathtaking coastal beauty.",
+    image:
+      "https://images.unsplash.com/photo-1556646371-4b19bbefd7af?fm=jpg&q=80&w=1080",
+    icon: Ship,
+  },
+  {
+    id: 4,
+    title: "Snorkeling",
+    description:
+      "Discover the underwater world with snorkeling adventures. Witness exotic fish, coral formations, and marine biodiversity in shallow waters.",
+    image:
+      "https://images.unsplash.com/photo-1682957205580-4a71606d284c?fm=jpg&q=80&w=1080",
+    icon: Anchor,
+  },
+  {
+    id: 5,
+    title: "Beach Activities",
+    description:
+      "Relax on pristine beaches, enjoy volleyball, build sandcastles, or simply unwind while listening to the waves.",
+    image:
+      "https://images.unsplash.com/photo-1637770577089-608e37d9502c?fm=jpg&q=80&w=1080",
+    icon: Waves,
+  },
+  {
+    id: 6,
+    title: "Island Hopping",
+    description:
+      "Explore nearby islands like Devbagh and experience secluded beaches, local culture, and untouched natural beauty.",
+    image:
+      "https://images.unsplash.com/photo-1556646371-4b19bbefd7af?fm=jpg&q=80&w=1080",
+    icon: Ship,
+  },
+];
 
+export default function Activities() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-blue-50 to-white">
       {/* Header */}
-      <div className="pt-24 pb-12 px-6">
+      <div className="pt-28 pb-12 px-6">
         <div className="max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -81,8 +87,12 @@ function Activities() {
       <section className="py-12 px-6">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {activities.map((activity, index) => (
-              <ActivityCard key={index} {...activity} index={index} />
+            {activities.map((activity) => (
+              <ActivityCard
+                key={activity.id}
+                {...activity}
+                index={activity.id - 1}
+              />
             ))}
           </div>
         </div>
@@ -102,16 +112,15 @@ function Activities() {
               Book your activities now and experience the best of Tarkarli's
               water adventures!
             </p>
-
             <button
-              onClick={() => {
+              onClick={() =>
                 window.open(
                   getWhatsAppLink(
                     "Hi, I would like to book activities in Tarkarli",
                   ),
                   "_blank",
-                );
-              }}
+                )
+              }
               className="bg-white text-blue-600 px-8 py-4 rounded-lg text-lg hover:bg-blue-50 transition-colors duration-300"
             >
               Contact Us On WhatsApp
@@ -122,5 +131,3 @@ function Activities() {
     </div>
   );
 }
-
-export default Activities;
