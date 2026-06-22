@@ -29,13 +29,13 @@ export default function Footer() {
           >
             <h3 className="text-2xl tracking-widest mb-4">EXPLORE TARKARLI</h3>
             <p className="text-blue-200 leading-relaxed">
-              Discover the hidden gem of Maharashtra’s coastline. Crystal-clear
+              Discover the hidden gem of Maharashtra's coastline. Crystal-clear
               waters, thrilling adventures, and authentic coastal hospitality
               await you.
             </p>
           </motion.div>
 
-          {/* Links */}
+          {/* Quick Links */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -46,7 +46,10 @@ export default function Footer() {
             <ul className="space-y-2 text-blue-200">
               {NAV_LINKS.map((link) => (
                 <li key={link.to}>
-                  <Link to={link.to} className="hover:text-white">
+                  <Link
+                    to={link.to}
+                    className="hover:text-white transition-colors"
+                  >
                     {link.label}
                   </Link>
                 </li>
@@ -85,7 +88,7 @@ export default function Footer() {
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label={label}
-                    className="p-2 bg-blue-800 rounded-full hover:bg-blue-700"
+                    className="p-2 bg-blue-800 rounded-full hover:bg-blue-700 transition-colors"
                   >
                     <Icon size={18} />
                   </a>
