@@ -1,2 +1,0 @@
-sample.txt file is added to perform practical number 6
-nantar delete kar :)
